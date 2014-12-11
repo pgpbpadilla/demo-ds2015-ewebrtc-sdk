@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+</head>
+<body>
+<header>Step 12. Conference Add Participants
+&nbsp;&nbsp; <a href="step11-start-conference.html">Previous Step</a>
+&nbsp;&nbsp; <!-- a href="step5-hold-resume.html">Next Step</a> -->
+&nbsp;&nbsp; <a href="index.html">Home</a>
+</header>
+
+<!-- HTML will go here -->
+    
+<!-- Step 1: HTML Phone Objects UI -->
+<p>
+<button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+<button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+    
+<!-- Step 2a: HTML Login and Logout UI -->
+<p>
+<input type="text" id="loginInput" placeholder="Example: alice or bob" size="30" hidden></input>
+<button id="loginButton" onclick="login()" hidden>Account ID Login</button>
+<button id="logoutButton" onclick="logout()" hidden>Logout</button>
+</p>
+
+<!-- Step 9a: HTML Add Video Elements -->
+<p>
+<table>
+  <tr>
+    <td><video id="local" style="width:320px;"></td>
+    <td><video id="remote" style="width:320px;"></td>
+  </tr>
+</table>
+</p>
+
+<!-- Step 11: HTML Add Conference -->
+<button id="startConferenceButton" onclick="onStartConference()" hidden>Start Conference</button>
+<button id="endConferenceButton" onclick="endConference()" hidden>End Conference</button>
+
+<!-- Step 12: HTML Add Participant UI -->
+<p>
+<input type="text" id="callToInput" placeholder="Account ID/Telephone" hidden></input>
+<button id="addParticipantButton" onclick="addParticipant()" hidden>Add Participant alice@yourdomain.com or 1234567890</button>
+<button id="invitationSentButton" hidden>Invitation Sent</button>
+<button id="invitationAcceptedButton" hidden>Invitation Accepted</button>
+<button id="invitationReceivedButton" onclick="onJoinConference()" hidden>Accept Conference Call</button>
+</p>
+
+<!-- JavaScript will go here -->  
+
+<!-- Step 1b: Configure Phone Objects and Register Events-->
+<script type="text/javascript" src="/js/ewebrtc-sdk.min.js"></script>   
+<script type="text/javascript">
+      
+function onError(data) {
+    console.log(data.error);
+}
+    
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+    configureButton.hidden = true;
+    configureSuccessButton.hidden = false;
+    loginInput.hidden = false; // Added in Step 2
+    loginButton.hidden = false; // Added in Step 2
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+    phone.on('session:ready', onSessionReady); // Added in Step 2
+    phone.on('session:disconnected', onSessionDisconnected); // Added in Step 2
+    phone.on('conference:connected', onConferenceConnected); // Added in Step 11
+    phone.on('conference:ended', onConferenceEnded); // Added in Step 11
+    phone.on('conference:invitation-sent', onConferenceInvitationSent); // Added in Step 12
+    phone.on('conference:invitation-received', onConferenceInvitationReceived); // Added in Step 12
+    phone.on('conference:invitation-accepted', onConferenceInvitationAccepted); // Added in Step 12
+    phone.on('conference:joining', onConferenceJoining); // Added in Step 12
+}
+     
+// Step 2b: Login and Logout
+function onSessionReady() {
+    loginButton.hidden = true;
+    logoutButton.hidden = false;
+    startConferenceButton.hidden = false; // Added in Step 11
+}
+    
+function onSessionDisconnected() {
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+    startConferenceButton.hidden = true;
+    endConferenceButton.hidden = true;
+    callToInput.hidden = true; // Added in Step 12
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({token: tokenHolder.access_token});
+        },
+        error: onError
+    });
+}
+    
+function logout() {
+    phone.logout();
+}
+        
+// Step 11b: Start Conference
+function onConferenceConnected () {
+    startConferenceButton.hidden = true;
+    endConferenceButton.hidden = false;
+    if (isConferenceHost) {                     // Added in Step 12
+        callToInput.hidden = false;             // Added in Step 12
+        addParticipantButton.hidden = false;    // Added in Step 12
+    }                                           // Added in Step 12
+}
+    
+function onConferenceEnded () {
+    startConferenceButton.hidden = false;
+    endConferenceButton.hidden = true;
+    callToInput.hidden = true; // Added in Step 12
+    addParticipantButton.hidden = true; // Added in Step 12
+    invitationSentButton.hidden = true; // Added in Step 12
+    invitationAcceptedButton.hidden = true; // Added in Step 12
+    invitationReceivedButton.hidden = true; // Added in Step 12
+}
+    
+function onStartConference() {
+    startConference ();
+    isConferenceHost = true; // Added in Step 12
+}
+
+function onEndConference() {
+    endConference ();
+}
+
+function startConference() {
+    phone.startConference({
+    mediaType: 'video',
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}
+    
+function endConference() {
+    phone.endConference();
+    isConferenceHost = false; // Added in Step 12
+}
+    
+// Step 12b: Add Participant
+function onConferenceInvitationSent() {
+    if (!phone.isCallInProgress) {
+        addParticipantButton.hidden = true;
+    }
+    invitationSentButton.hidden = false;
+    invitationAcceptedButton.hidden = true;
+}
+    
+function onConferenceInvitationReceived() {
+    addParticipantButton.hidden = true;
+    startConferenceButton.hidden = true;
+    invitationReceivedButton.hidden = false;
+}
+    
+function onConferenceInvitationAccepted() {
+    callToInput.value = "";
+    callToInput.placeholder = "New Participant";
+    addParticipantButton.hidden = false;
+    invitationSentButton.hidden = true;
+    invitationAcceptedButton.hidden = false;
+}
+    
+function onConferenceJoining() {
+    invitationReceivedButton.hidden = true;
+}
+        
+function addParticipant() {
+    phone.addParticipants([callToInput.value]);
+}
+    
+function onJoinConference() {
+    phone.joinConference({
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+    isConferenceHost = false;
+}
+
+</script>
+
+<!-- JavaScript Code Snippets -->
+<p><span><div style="background-color:#EEEEEE; font:12px; padding-left:5px; width:100%">      
+<pre>
+
+//Step 12. Conference Add Participants
+
+function registerEvents() {
+    phone.on('conference:invitation-sent', onConferenceInvitationSent);
+    phone.on('conference:invitation-received', onConferenceInvitationReceived);
+    phone.on('conference:invitation-accepted', onConferenceInvitationAccepted);
+    phone.on('conference:joining', onConferenceJoining);
+}
+
+function onConferenceInvitationSent() {
+    // Do something
+}
+    
+function onConferenceInvitationReceived() {
+    // Do something
+}
+    
+function onConferenceInvitationAccepted() {
+    // Do something
+}
+    
+function onConferenceJoining() {
+     // Do something
+}
+        
+function addParticipant() {
+    phone.addParticipants([callToInput.value]);
+}
+    
+function onJoinConference() {
+    phone.joinConference({
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}  
+</pre>       
+</div></span></p>
+
+</body>
+</html>

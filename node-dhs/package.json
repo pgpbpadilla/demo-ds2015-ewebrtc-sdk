@@ -1,0 +1,90 @@
+{
+	"name": "att.webrtc.dhs",
+	"version": "1.0.0-beta",
+	"description": "NodeJS Developer Hosted Server (DHS) for AT&T WebRTC JS SDK",
+	"homepage": "https://developer.att.com",
+	"keywords": [
+		"WebRTC",
+		"AT&T"
+	],
+	"license": "AT&T. Uses 3rd party libraries. See 3P-LICENSES.txt for attribution",
+	"author": "AT&T Developer Program, DRT/LTA",
+	"private": true,
+	"files": [
+		"dhs.cert",
+		"dhs.key",
+		"README.md",
+		"RELEASE.md",
+		"LICENSE.txt",
+		"3P-LICENSES.txt",
+		"lib",
+		"fresh-start.sh"
+	],
+	"main": "att-webrtc-dhs.js",
+	"scripts": {
+		"start": "node att-webrtc-dhs.js sandbox"
+	},
+	"engines": {
+		"node": "0.11.x"
+	},
+	"dependencies": {
+		"bunyan": "1.0.0",
+		"restify": "2.8.2"
+	},
+	"dhs_config": {
+		"dhs_host": "localhost",
+		"api_env": "sandbox",
+		"http_port": 10010,
+		"https_port": 10011,
+		"cert_file": "dhs.cert",
+		"key_file": "dhs.key",
+		"dhs_name": "att.webrtc.dhs",
+		"cors_domains": [
+			"your.test.com:9001",
+			"*.prod.com:9001",
+			"*.sandbox.myapp.com:9001",
+			"0.0.0.0:9001",
+			"localhost:9001",
+			"127.0.0.1:9001"
+		]
+	},
+	"sandbox": {
+		"api_endpoint": "https://api.att.com",
+		"app_key": "YourAppKey",
+		"app_secret": "YourAppSecret",
+		"oauth_callback": "https://localhost:9001/oauth/callback",
+		"virtual_numbers_pool": [
+			"1234567890",
+			"1234567890",
+			"1234567890"
+		],
+		"ewebrtc_domain": "your.ewebrtc_domain.com"
+	},
+	"prod": {
+		"api_endpoint": "https://api.att.com",
+		"app_key": "YourAppKey",
+		"app_secret": "YourAppSecret",
+		"oauth_callback": "https://localhost:9001/oauth/callback",
+		"virtual_numbers_pool": [
+			"1234567890",
+			"1234567890",
+			"1234567890"
+		],
+		"ewebrtc_domain": "your.ewebrtc_domain.com"
+	},
+	"devDependencies": {
+		"chai": "^1.9.1",
+		"mocha": "^1.18.2",
+		"proxyquire": "^0.5.3",
+		"sinon": "^1.9.0",
+		"xunit-file": "0.0.5",
+		"istanbul": "^0.2.6",
+		"grunt-cli": "^0.1.13",
+		"grunt": "^0.4.4",
+		"grunt-contrib-concat": "^0.4.0",
+		"grunt-contrib-watch": "^0.6.1",
+		"grunt-jslint": "^1.1.8",
+		"grunt-contrib-uglify": "^0.4.0",
+		"grunt-mocha-test": "^0.10.2"
+	}
+}

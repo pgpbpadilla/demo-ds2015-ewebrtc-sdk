@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+</head>
+<body>
+<header>Step 11. Conference Start and End
+&nbsp;&nbsp; <a href="step10-login-advanced.html">Previous Step</a>
+&nbsp;&nbsp; <a href="step12-add-participants.html">Next Step</a>
+&nbsp;&nbsp; <a href="index.html">Home</a>
+</header>
+
+<!-- HTML will go here -->
+    
+<!-- Step 1a: HTML Phone Objects UI -->
+<p>
+<button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+<button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+    
+<!-- Step 2a: HTML Login and Logout UI -->
+<p>
+<input type="text" id="loginInput" placeholder="Example: alice or bob" size="30" hidden></input>
+<button id="loginButton" onclick="login()" hidden>Account ID Login</button>
+<button id="logoutButton" onclick="logout()" hidden>Logout</button>
+</p>
+
+<!-- Step 9a: HTML Add Video Elements -->
+<p>
+<table>
+  <tr>
+    <td><video id="local" style="width:320px;"></td>
+    <td><video id="remote" style="width:320px;"></td>
+  </tr>
+</table>
+</p>
+
+<!-- Step 11: HTML Add Conference -->
+<button id="startConferenceButton" onclick="onStartConference()" hidden>Start Conference</button>
+<button id="endConferenceButton" onclick="endConference()" hidden>End Conference</button>
+
+<!-- JavaScript will go here -->  
+
+<!-- Step 1b: Configure Phone Objects and Register Events-->
+<script type="text/javascript" src="/js/ewebrtc-sdk.min.js"></script>   
+<script type="text/javascript">
+      
+function onError(data) {
+    console.log(data.error);
+}
+    
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+    configureButton.hidden = true;
+    configureSuccessButton.hidden = false;
+    loginInput.hidden = false; // Added in Step 2
+    loginButton.hidden = false; // Added in Step 2
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+    phone.on('session:ready', onSessionReady); // Added in Step 2
+    phone.on('session:disconnected', onSessionDisconnected); // Added in Step 2
+    phone.on('conference:connected', onConferenceConnected); // Added in Step 11
+    phone.on('conference:ended', onConferenceEnded); // Added in Step 11
+}
+     
+// Step 2b: Login and Logout
+function onSessionReady() {
+    loginButton.hidden = true;
+    logoutButton.hidden = false;
+    startConferenceButton.hidden = false; // Added in Step 11
+}
+    
+function onSessionDisconnected() {
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+    startConferenceButton.hidden = true; // Added in Step 11
+    endConferenceButton.hidden = true; // Added in Step 11
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({token: tokenHolder.access_token});
+        },
+        error: onError
+    });
+}
+    
+function logout() {
+    phone.logout();
+}
+        
+// Step 11b: Start Conference
+function onConferenceConnected () {
+    startConferenceButton.hidden = true;
+    endConferenceButton.hidden = false;
+}
+    
+function onConferenceEnded () {
+    startConferenceButton.hidden = false;
+    endConferenceButton.hidden = true;
+}
+    
+function onStartConference() {
+    startConference ();
+}
+
+function onEndConference() {
+    endConference ();
+}
+
+function startConference() {
+    phone.startConference({
+    mediaType: 'video',
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}
+    
+function endConference() {
+    phone.endConference();
+}
+
+</script>
+
+<!-- JavaScript Code Snippets -->
+<p><span><div style="background-color:#EEEEEE; font:12px; padding-left:5px; width:500px">      
+<pre>
+
+//Step 11. Conference Start and End
+
+function registerEvents() {
+    phone.on('conference:connected', onConferenceConnected);
+    phone.on('conference:ended', onConferenceEnded);
+}
+
+function onConferenceConnected () {
+    // Do something
+}
+    
+function onConferenceEnded () {
+    // Do something
+}
+    
+function onStartConference() {
+    startConference ();
+}
+
+function onEndConference() {
+    endConference ();
+}
+
+function startConference() {
+    phone.startConference({
+    mediaType: 'video',
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}
+    
+function endConference() {
+    phone.endConference();
+}
+    
+</pre>       
+</div></span></p>
+
+</body>
+</html>

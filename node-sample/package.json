@@ -1,0 +1,36 @@
+{
+  "name": "att.webrtc.sample",
+  "version": "1.0.0-beta",
+  "description": "Enahcned WebRTC Sample Application built with AT&T Enhanced WebRTC JS SDK",
+  "homepage": "https://developer.att.com",
+  "keywords": [ "Enhanced WebRTC", "AT&T" ],
+  "license": "AT&T. Uses 3rd party libraries. See 3P-LICENSES.txt for attribution",
+  "author": "AT&T Developer Program, DRT/LTA",
+  "private": true,
+
+  "dhs_https_host": "localhost",
+  "dhs_https_port" : 10011,
+
+  "sample_http_port": 9000,
+  "sample_https_port": 9001,
+
+  "scripts": {
+    "start": "node ./bin/www"
+  },
+
+  "engines": {
+    "node": "0.11.*"
+  },
+
+  "dependencies": {
+    "express": "~4.2.0",
+    "express-session": "*",
+    "static-favicon": "~1.0.0",
+    "morgan": "~1.0.0",
+    "cookie-parser": "~1.0.1",
+    "body-parser": "~1.0.0",
+    "debug": "~0.7.4",
+    "hjs": "~0.0.6",
+    "less-middleware": "1.0.x"
+  }
+}

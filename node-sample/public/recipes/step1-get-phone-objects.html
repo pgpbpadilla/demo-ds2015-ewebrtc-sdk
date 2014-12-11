@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+</head>
+<body>
+
+<header>Step 1. Get Phone Objects
+&nbsp;&nbsp; <a href="step2-login-logout.html">Next Step</a>
+&nbsp;&nbsp; <a href="index.html">Home</a>
+</header>
+    
+<!-- HTML will go here -->
+    
+<!-- Step 1a: HTML Phone Objects UI -->
+<p>
+<button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+<button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+
+<!-- JavaScript will go here -->  
+
+<!-- Step 1b: Configure Phone Objects and Register Events-->
+<script type="text/javascript" src="/js/ewebrtc-sdk.min.js"></script>   
+<script type="text/javascript">
+      
+function onError(data) {
+    console.log(data.error);
+}
+    
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+    configureButton.hidden = true;
+    configureSuccessButton.hidden = false;
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+}
+
+</script>
+
+<!-- JavaScript Code Snippets -->
+<p><span><div style="background-color:#EEEEEE; font:12px; padding-left:5px; width:500px">        
+<pre>
+
+//Step 1. Get Phone Objects
+
+function onError(data) {
+    console.log(data.error);
+}
+
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+}
+
+</pre>       
+</div></span></p>
+
+</body>
+</html>

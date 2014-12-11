@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+</head>
+<body>
+<header>Step 2. Login and Logout (Account ID Users)
+&nbsp;&nbsp; <a href="step1-get-phone-objects.html">Previous Step</a>
+&nbsp;&nbsp; <a href="step3-make-answer.html">Next Step</a>
+&nbsp;&nbsp; <a href="index.html">Home</a>
+</header>
+
+<!-- HTML will go here -->
+    
+<!-- Step 1a: HTML Phone Objects UI -->
+<p>
+<button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+<button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+    
+<!-- Step 2a: HTML Login and Logout UI -->
+<p>
+<input type="text" id="loginInput" placeholder="Example: alice or bob" size="30" hidden></input>
+<button id="loginButton" onclick="login()" hidden>Account ID Login</button>
+<button id="logoutButton" onclick="logout()" hidden>Logout</button>
+</p>
+
+<!-- JavaScript will go here -->  
+
+<!-- Step 1b: Configure Phone Objects and Register Events-->
+<script type="text/javascript" src="/js/ewebrtc-sdk.min.js"></script>   
+<script type="text/javascript">
+      
+function onError(data) {
+    console.log(data.error);
+}
+
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+    configureButton.hidden = true;
+    configureSuccessButton.hidden = false;
+    loginInput.hidden = false; // Added in Step 2
+    loginButton.hidden = false; // Added in Step 2
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+    phone.on('session:ready', onSessionReady); // Added in Step 2
+    phone.on('session:disconnected', onSessionDisconnected); // Added in Step 2
+}
+    
+// Step 2b: Login and Logout
+function onSessionReady() {
+    loginButton.hidden = true;
+    logoutButton.hidden = false;
+}
+    
+function onSessionDisconnected() {
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({token: tokenHolder.access_token});
+        },
+        error: onError
+    }); 
+}
+    
+function logout() {
+    phone.logout();
+}
+
+</script>
+
+<!-- JavaScript Code Snippets -->
+<p><span><div style="background-color:#EEEEEE; font:12px; padding-left:5px; width:500px">         
+<pre>
+
+//Step 2. Login and Logout
+
+function registerEvents() {
+    phone.on('session:ready', onSessionReady);
+    phone.on('session:disconnected', onSessionDisconnected);
+}
+
+function onSessionReady() {
+    // Do something
+}
+    
+function onSessionDisconnected() {
+    // Do something
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({token: tokenHolder.access_token});
+            },
+        error: onError
+    }) 
+}
+    
+function logout() {
+    phone.logout();
+}
+
+</pre>       
+</div></span></p>
+
+</body>
+</html>

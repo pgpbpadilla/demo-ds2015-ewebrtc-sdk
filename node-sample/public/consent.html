@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+
+    <!-- Always force latest IE rendering engine (even in intranet) & Chrome Frame
+    Remove this if you use the .htaccess -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+    <title>User Consent</title>
+    <meta name="description" content="">
+    <meta name="author" content="Yogesh Randhawa">
+
+    <meta name="viewport" content="width=device-width; initial-scale=1.0">
+
+    <!-- Replace favicon.ico & apple-touch-icon.png in the root of your domain and delete these references -->
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+    <script type="text/javascript">
+      function load() {
+        var url = window.location.href,
+          mockON = url.indexOf('mockON=true') >= 0;
+        
+        if (mockON) {
+          document.getElementById('header').innerHTML = 'Mock user consent...';
+          document.getElementById('consentForm').style.display = 'block';
+          return;
+        }
+        getAccessCode();
+      }
+
+      function getAccessCode() {
+        var url = window.location.href,
+          mockON = url.indexOf('mockON=true') >= 0,
+          args = {},
+          query;
+
+        if (mockON) {
+          args.mockON = true;
+          var phone = document.getElementById('phone').value;
+          if (!phone) {
+           return alert ('Phone number is required for consent'); 
+          }
+          args.phone = phone;
+        }
+        if (url.indexOf('?error') >= 0) {
+          args.error = url.slice(url.indexOf('?error=') + 7);
+        } else if (url.indexOf('?code') >= 0) {
+          args.code = mockON ? url.slice(url.indexOf('?code=') + 6, url.indexOf('&mockON=true')) : url.slice(url.indexOf('?code=') + 6);
+        }
+        if (sessionStorage !== undefined) {
+          sessionStorage.userConsentResult = JSON.stringify(args);
+        } else {
+          query = 'userConsentResult=' + JSON.stringify(args);
+        }
+        url = url.slice(0, url.indexOf ('/consent.html')) + (query ? ('?' + query) : '');
+        window.location.href = url;
+      }
+    </script>
+  </head>
+
+  <body onload="load()">
+    <div>
+      <header>
+        <h1 id="header">Retrieving oauth code...</h1>
+      </header>
+      <nav></nav>
+
+      <form id="consentForm" style="display: none" action="" method="post">
+        <label><input type="tel" id="phone" pattern="[0-9]" required max="10" value="14250000001"/></label>
+        <input type="button" value="Allow" onclick="getAccessCode()" />
+      </form>
+
+      <footer></footer>
+
+    </div>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<div class="col-sm-12 jumbotron jumbotron-video clearfix">
+    <div id="address-box" style="display:none">
+        <div class="col-sm-6 col-sm-offset-3 jumbotron">
+
+            <h2>Address</h2>
+
+            <!-- SET ADDRESS FORM -->
+            <form id="addressForm" action="" method="post" onsubmit="setAddress(event)">
+                <div class="form-group">
+                    <label>Name</label>
+                    <input type="text" required class="form-control" name="name" placeholder="Name" value="Enhanced WebRTC Tester">
+                    <label>House Number</label>
+                    <input type="text" required class="form-control" name="houseNumber" placeholder="House Number" value="16221">
+                    <label>Street</label>
+                    <input type="text" required class="form-control" name="street" placeholder="Street" value="NE 72nd Way">
+                    <label>Unit/Apt/Suite</label>
+                    <input type="text" class="form-control" name="unit" placeholder="Unit/Apt/Suite" value="">
+                    <label>City</label>
+                    <input type="text" required class="form-control" name="city" placeholder="City" value="Redmond">
+                    <label>State</label>
+                    <input type="text" required class="form-control" name="state" placeholder="State" value="WA">
+                    <label>Zip Code</label>
+                    <input type="text" required class="form-control" name="zip" placeholder="Zip Code" value="98052">
+                </div>
+                <div class="form-group">
+                    <label>Address Confirmed<input type="checkbox" name="isAddressConfirmed"></label>
+                </div>
+                <button type="submit" class="btn btn-primary btn-lg" id="address">
+                    Add Address
+                </button>
+                <button type="button" class="btn btn-primary btn-lg" onclick="hideAddressView()">
+                    Cancel
+                </button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-group">
+
+        <div class="row">
+            <div class="btn-group">
+                <button id="btn-make-call" type="button" class="btn btn-primary btn-md" onclick="call(event)">
+                    <span>Call</span>
+                </button>
+                <button id="btn-start-conference" type="button" class="btn btn-primary btn-md" onclick="conference(event)">
+                    <span>Conference</span>
+                </button>
+            </div>
+            <div class="alert alert-warning alert-dismissible" id="alerts-in-calls" role="alert">
+
+            </div>
+        </div>
+        <br />
+
+        <div class="input-group row col-xs-12 hidden" id="callForm">
+            <div class="input-group">
+                <div class="input-group-btn">
+                    <div class="col-sm-8 col-md-9">
+                        <label><input type="tel" id="callee" class="form-control" required="" name="callee" autocomplete="on"></label>
+                    </div>
+                    <div class="col-sm-2 col-md-1">
+                        <button id="btn-dial" class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-earphone"> Dial</span>
+                        </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <button id="btn-hangup" type="button" class="btn btn-danger btn-xs" onclick="hangup()" disabled="">
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <div class="input-group audio-only">
+                <label>&nbsp; Audio Only?<input name="audio-only" type="checkbox" id="callAudioOnly"></label>
+            </div>
+        </div>
+
+        <div class="input-group col-sm-11 hidden" id="confForm">
+            <div class="row">
+                <div class="input-group-btn">
+                    <div class="col-sm-2 col-md-2 col-lg-1">
+                        <button id="btn-create-conference" class="btn btn-default btn-xs">
+                            <span class="glyphicon glyphicon-earphone"> Start</span>
+                        </button>
+                    </div>
+                    <div class="col-sm-5 col-md-7">
+                        <label><input type="tel" id="participant" class="form-control" required="" name="participant" autocomplete="on" disabled=""></label>
+                    </div>
+                    <div class="col-sm-2 col-md-1">
+                        <button id="btn-add-participant" type="button" class="btn btn-default btn-xs" onclick="participant()" disabled="">
+                            <span class="glyphicon glyphicon-plus"> Add</span>
+                        </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <button id="btn-end-conference" type="button" class="btn btn-danger btn-xs" onclick="endConference()" disabled="">
+                            <span class="glyphicon glyphicon-phone-alt"></span>
+                        </button>
+                    </div>
+                    <div class="col-xs-1">
+                        <button id="btn-participants-list" type="button" class="btn btn-default btn-xs" onclick="toggleParticipants()" disabled="">
+                            <span class="glyphicon glyphicon-user"> </span>
+                            <span id="expand-participants">
+                                <span class="glyphicon glyphicon-chevron-down"> </span>
+                            </span>
+                        </button>
+                    </div>
+                    <div class="col-sm-1">
+                        <div id="panel-participants" style="display:none">
+                            <div class="panel-header">
+                                <h3 class="panel-title">Participants</h3>
+                                <span class="panel-close glyphicon glyphicon-remove" onclick="hideParticipants()">&nbsp;</span>
+                            </div>
+                            <div id="participants-list" class="panel-body"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+             <div class="input-group audio-only">
+                <label>&nbsp; Audio Only?<input name="audio-only" type="checkbox" id="confAudioOnly"></label>
+            </div>
+        </div>
+    </div>
+    <div class="row video-wrap" id="video-wrap">
+        <video id="remoteVideo" class="video-box col-xs-12  flip-horizontal"></video>
+        <div class="call-actions clearfix" id="call-actions">
+            <div class="col-xs-12" style="padding-left: 0">
+                <button id="btn-hold" type="button" class="btn btn-default btn-xs" onclick="holdCall()" disabled>
+                    <span class="glyphicon glyphicon-pause"> Hold</span>
+                </button>
+                <button id="btn-resume" type="button" class="btn btn-default btn-xs" onclick="resumeCall()" disabled>
+                    <span class="glyphicon glyphicon-play"> Resume</span>
+                </button>
+                <button id="btn-move" type="button" class="btn btn-default btn-xs" onclick="moveCall()" disabled>
+                    <span class="glyphicon glyphicon-share"> Move</span>
+                </button>
+                <button id="btn-switch" type="button" class="btn btn-default btn-xs" onclick="switchCalls()" disabled>
+                    <span class="glyphicon glyphicon-retweet"> Switch</span>
+                </button>
+                <button id="btn-mute" type="button" class="btn btn-default btn-xs" onclick="mute()" disabled>
+                    <span class="glyphicon glyphicon-volume-off"> Mute</span>
+                </button>
+                <button id="btn-unmute" type="button" class="btn btn-default btn-xs" onclick="unmute()" disabled>
+                    <span class="glyphicon glyphicon-volume-up"> Unmute </span>
+                </button>
+                <button id="btn-transfer" type="button" class="btn btn-default btn-xs" onclick="transfer()" disabled>
+                    <span class=" glyphicon glyphicon-transfer"> Transfer </span>
+                </button>
+            </div>
+        </div>
+        <video id="localVideo" class="video-box col-sm-4 col-xs-5 flip-horizontal"></video>
+    </div>
+</div>

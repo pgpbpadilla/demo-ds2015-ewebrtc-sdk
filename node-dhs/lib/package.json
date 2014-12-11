@@ -1,0 +1,15 @@
+{
+  "name": "att-webrtc-dhs-lib",
+  "version": "1.0.0",
+  "description": "Library for AT&T WebRTC NodeJS DHS",
+  "homepage": "https://developer.att.com",
+  "keywords": [ "WebRTC", "AT&T" ],
+  "license": "AT&T",
+  "author": "Raj Sesetti, AT&T Developer Program, DRT/LTA",
+
+  "main": "att-webrtc-dhs-lib.js",
+
+  "dependencies": {
+    "restify": "2.8.2"
+  }
+}

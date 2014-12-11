@@ -1,0 +1,11 @@
+{
+  "name": "att-webrtc-sample-lib",
+  "version": "1.0.0",
+  "description": "Library for AT&T Enhanced WebRTC Sample App",
+  "homepage": "https://developer.att.com",
+  "keywords": [ "Enhanced WebRTC", "AT&T" ],
+  "license": "AT&T",
+  "author": "Raj Sesetti, AT&T Developer Program, DRT/LTA",
+
+  "main": "att-webrtc-sample-lib.js"
+}

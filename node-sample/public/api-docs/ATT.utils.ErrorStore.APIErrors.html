@@ -1,0 +1,9622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>JavaScript SDK for AT&T Enhanced WebRTC API Namespace: APIErrors</title>
+
+	<!--[if lt IE 9]>
+	<script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+	<link type="text/css" rel="stylesheet" href="styles/sunlight.default.css">
+
+	<link type="text/css" rel="stylesheet" href="styles/site.cerulean.css">
+
+</head>
+
+<body>
+<div class="container-fluid">
+	<div class="navbar navbar-fixed-top navbar-inverse">
+		<div class="navbar-inner">
+			<a class="brand" href="index.html">JavaScript SDK for AT&T Enhanced WebRTC API</a>
+			<ul class="nav">
+				
+				<li class="dropdown">
+					<a href="namespaces.list.html" class="dropdown-toggle" data-toggle="dropdown">Namespaces<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="ATT.browser.html">ATT.browser</a>
+						</li>
+						
+						<li>
+							<a href="ATT.logManager.html">ATT.logManager</a>
+						</li>
+						
+						<li>
+							<a href="ATT.rtc.html">ATT.rtc</a>
+						</li>
+						
+						<li>
+							<a href="ATT.rtc.dhs.html">ATT.rtc.dhs</a>
+						</li>
+						
+						<li>
+							<a href="ATT.rtc.Phone.html">ATT.rtc.Phone</a>
+						</li>
+						
+						<li>
+							<a href="ATT.utils.ErrorStore.APIErrors.html">ATT.utils.ErrorStore.APIErrors</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="classes.list.html" class="dropdown-toggle" data-toggle="dropdown">Classes<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="Phone.html">Phone</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+				<li class="dropdown">
+					<a href="events.list.html" class="dropdown-toggle" data-toggle="dropdown">Events<b
+						class="caret"></b></a>
+
+					<ul class="dropdown-menu ">
+						
+						<li>
+							<a href="Phone.html#event:call:canceled">Phone#call:canceled</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:connected">Phone#call:connected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:connecting">Phone#call:connecting</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:disconnected">Phone#call:disconnected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:disconnecting">Phone#call:disconnecting</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:held">Phone#call:held</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:incoming">Phone#call:incoming</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:muted">Phone#call:muted</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:rejected">Phone#call:rejected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:resumed">Phone#call:resumed</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:ringback-provided">Phone#call:ringback-provided</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:call:unmuted">Phone#call:unmuted</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:canceled">Phone#conference:canceled</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:connected">Phone#conference:connected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:connecting">Phone#conference:connecting</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:disconnecting">Phone#conference:disconnecting</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:ended">Phone#conference:ended</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:held">Phone#conference:held</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:invitation-accepted">Phone#conference:invitation-accepted</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:invitation-received">Phone#conference:invitation-received</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:invitation-rejected">Phone#conference:invitation-rejected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:invitation-sending">Phone#conference:invitation-sending</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:invitation-sent">Phone#conference:invitation-sent</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:joining">Phone#conference:joining</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:participant-removed">Phone#conference:participant-removed</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:conference:resumed">Phone#conference:resumed</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:address-updated">Phone#event:address-updated</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:answering">Phone#event:answering</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:dialing">Phone#event:dialing</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:error">Phone#event:error</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:notification">Phone#event:notification</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:warning">Phone#event:warning</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:media:established">Phone#media:established</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:session:call-switched">Phone#session:call-switched</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:session:disconnected">Phone#session:disconnected</a>
+						</li>
+						
+						<li>
+							<a href="Phone.html#event:session:ready">Phone#session:ready</a>
+						</li>
+						
+
+					</ul>
+				</li>
+				
+			</ul>
+		</div>
+	</div>
+
+	<div class="row-fluid">
+
+		
+		<div class="span8">
+			
+				<div id="main">
+					
+
+
+	<h1 class="page-title">Namespace: APIErrors</h1>
+<section>
+
+<header>
+    <h2>
+    APIErrors
+    </h2>
+    
+</header>
+
+<article>
+    <div class="container-overview">
+    
+
+    
+        
+            <div class="description"><p>Lists the API error codes used by the AT&amp;T's Enhanced WebRTC SDK.</p></div>
+        
+
+        
+<dl class="details">
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+        
+    
+    </div>
+
+    
+
+    
+
+    
+
+    
+
+    
+
+    
+        <h3 class="subsection-title">Members</h3>
+
+        <dl>
+            
+<dt class="name" id="16503">
+    <h4><span class="type-signature">&lt;private, static> </span>16503<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16503</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Address provided by the end user is not geo codable.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The address provided is unreachable.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Correct the portion of address as per the error text and retry.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0015: Address is not valid address for E911 routing.Reason</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0015</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16504">
+    <h4><span class="type-signature">&lt;private, static> </span>16504<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16504</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The address provided is not present in the System.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The address provided is not present in the System.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please try again later.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0016: Address Confirmation Required</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0016</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16505">
+    <h4><span class="type-signature">&lt;private, static> </span>16505<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16505</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System is unavailable to process the request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System is unavailable to process the request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please try again later.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0017: NENA provider system is not available.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0017</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16506">
+    <h4><span class="type-signature">&lt;private, static> </span>16506<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16506</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System is available but could not process the request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System is available but could not process the request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please contact system administrator.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0018: NENA provider system error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0018</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16507">
+    <h4><span class="type-signature">&lt;private, static> </span>16507<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16508</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access token is invalid.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><ol>
+<li>Access Token is incorrect or in valid.?2. Access token is not authorized for the Enhanced WebRTC scope.</li>
+</ol></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Re-Authenticate and retrieve the correct access token.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0001: A policy error occurred. For example, rate…it error, authentication and authorization errors</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>401</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0001</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16508">
+    <h4><span class="type-signature">&lt;private, static> </span>16508<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16508</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Invalid token</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access Token is incorrect or in valid.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Re-Authenticate and retrieve the correct access token for Enhanced WebRTC</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0002: Privacy verification failed for address <address> request is refused</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0002</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16509">
+    <h4><span class="type-signature">&lt;private, static> </span>16509<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16509</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not implemented</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Reserved for future use</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Reserved for future use</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0003: Too many addresses specified in Message part</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0003</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="16511">
+    <h4><span class="type-signature">&lt;private, static> </span>16511<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>createE911Id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>16511</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System error occurred</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System error occurred</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Use the explanation to find the reason for failure.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0001: A service error has occurred. Error code is <error_explanation></p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST emergencyServices/v1/e911Location</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0001</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2500">
+    <h4><span class="type-signature">&lt;private, static> </span>2500<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2500</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System error occurred</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System error occurred</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Use the explanation to find the reason for failure.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0001: A service error has occurred. Error code is <error_explanation></p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0001</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2501">
+    <h4><span class="type-signature">&lt;private, static> </span>2501<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2501</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Mandatory parameter is missing in the Request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Mandatory parameter is missing in the Request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The parameter name is suggested in the error text.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0002 - Invalid input value for message part <part_name></p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0002</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2502">
+    <h4><span class="type-signature">&lt;private, static> </span>2502<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2502</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Invalid values provided for a parameter in the Request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Invalid values are passed in the Request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Pass the valid values as suggested in the error response.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0003 - Invalid input value for message part <part_name>, valid values are <part_values></p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC0003</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2504">
+    <h4><span class="type-signature">&lt;private, static> </span>2504<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>login</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2504</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>E911 not supported for non-telephone users</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>E911 Id is not required a parameter for this user type (account id)</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please don’t pass E911 id to login for account id users</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8510:E911 not supported for non-telephone users</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8510</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2505">
+    <h4><span class="type-signature">&lt;private, static> </span>2505<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>login</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2505</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Valid e911Id is mandatory for mobile number or virtual number</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>x-e911Id is missing in the request. x-e911Id is invalid.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>e911Id should be retrieved using E911 API and appropriately passed in the Create Session Request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8511:Valid e911Id is mandatory for <part_value></p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8511</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2506">
+    <h4><span class="type-signature">&lt;private, static> </span>2506<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2506</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access token not associated with virtual number or account id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access token not assigned to virtual number or account id.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Call associate token operation before create session for virtual number or account id scenario.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8512:Unassigned token associate token to virtual number or account id</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8512</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2507">
+    <h4><span class="type-signature">&lt;private, static> </span>2507<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>login</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2507</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Token in use.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A session was already created with the access token</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>In case user abruptly closed the application, called to expire the token and receive new token.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8513:Token in use.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>400</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8513</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2508">
+    <h4><span class="type-signature">&lt;private, static> </span>2508<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2508</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access token is invalid.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access Token is incorrect or invalid. Access token is not authorized for the Enhanced WebRTC scope.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Re-authenticate and retrieve the correct access token.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0001:A policy error occurred.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>401</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0001</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2509">
+    <h4><span class="type-signature">&lt;private, static> </span>2509<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2509</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Invalid token</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access Token is incorrect or invalid.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Re-Authenticate and retrieve the correct access token for Enhanced WebRTC</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0002:Privacy verification failed for address <address> request is refused</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0002</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2510">
+    <h4><span class="type-signature">&lt;private, static> </span>2510<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2510</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Not implemented</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Reserved for future use</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Reserved for future use</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0003:Too many addresses specified in Message part</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL0003</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2511">
+    <h4><span class="type-signature">&lt;private, static> </span>2511<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2501</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User has not been provisioned for Enhanced WebRTC.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>User has not been provisioned for Enhanced WebRTC service</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>End user needs to provide consent to get provisioned.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1009:User has not been provisioned for %1</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1009</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="2512">
+    <h4><span class="type-signature">&lt;private, static> </span>2512<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>login</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>2512</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Number of Session exceeds the allowed limit..</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>For virtual number and account id users: Since virtual number is assigned to a
+specific user. Max number of sessions is defined by the network.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>For virtual number and account id scenario, contact Administrator.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1100:Max number of session exceeded allowed limit %1</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POST /RTC/v1/sessions</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1100</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="3507">
+    <h4><span class="type-signature">&lt;private, static> </span>3507<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>logout</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>3507</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Session Id is not associated with the Access Token passed in the request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Access Token that was passed in the Request is not mapped to the Session Id.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Use the same Access Token that was initially passed in.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1102:Session Id not associated with the token</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>DELETE /RTC/v1/sessions/{sessionid}</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>403</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>POL1102</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="404">
+    <h4><span class="type-signature">&lt;private, static> </span>404<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>404</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><method name> The requested session resource was not found.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Service Unavailable</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please look into API Error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>The requested session resource was not found.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>METHOD: Resource URL</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>404</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;&quot;</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="500">
+    <h4><span class="type-signature">&lt;private, static> </span>500<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>500</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><method name> failed - Unable to complete requested operation</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>System error occurred</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Use the explanation to find the reason for failure.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Populated from API response if available</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>METHOD: Resource URL</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>500</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;&quot;</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="502">
+    <h4><span class="type-signature">&lt;private, static> </span>502<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>502</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><method name> failed - Unable to complete requested operation</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please look into API Error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please look into API Error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Populated from API response if available</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>METHOD: Resource URL</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>502</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;&quot;</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="503">
+    <h4><span class="type-signature">&lt;private, static> </span>503<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>503</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><method name> failed - Unable to complete requested operation</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Bad Gateway</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please look into API Error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Populated from API response if available</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>METHOD: Resource URL</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>503</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;&quot;</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="504">
+    <h4><span class="type-signature">&lt;private, static> </span>504<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>*</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>504</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p><method name> failed - Unable to complete requested operation</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Service Unavailable</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Please look into API Error</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Populated from API response if available</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>METHOD: Resource URL</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>504</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>&quot;&quot;</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="5504">
+    <h4><span class="type-signature">&lt;private, static> </span>5504<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>answer</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>5504</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Duplicate Request</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A media modification is in progress for the callId.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Complete the In-Progress Media modification before initiating another request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501: Call <callid> in progress</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>PUT /RTC/v1/sessions/{sessionid}/calls/{callid}</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>409</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="7508">
+    <h4><span class="type-signature">&lt;private, static> </span>7508<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>hold</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>7508</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Duplicate request</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A media modification is in progress for the callId.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Complete the In-Progress Media modification before initiating another request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501: Call <callid> in progress</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>PUT /RTC/v1/sessions/{sessionid}/calls/{callid}</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>409</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        
+            
+<dt class="name" id="8508">
+    <h4><span class="type-signature">&lt;private, static> </span>8508<span class="type-signature"> :Object</span></h4>
+
+    
+</dt>
+<dd>
+    
+
+    
+        <h5>Type:</h5>
+        <ul>
+            <li>
+                
+<span class="param-type">Object</span>
+
+
+            </li>
+        </ul>
+    
+
+    
+<dl class="details">
+	
+
+	<h5 class="subsection-title">Properties:</h5>
+
+	<dl>
+
+<table class="props table table-striped">
+    <thead>
+	<tr>
+		
+		<th>Name</th>
+		
+
+		<th>Type</th>
+
+		
+
+		
+
+		<th class="last">Description</th>
+	</tr>
+	</thead>
+
+	<tbody>
+	
+
+        <tr>
+            
+                <td class="name"><code>JSObject</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>ATT.rtc.Phone</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>JSMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>resume</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>8508</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ErrorMessage</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Duplicate request</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleCauses</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>A media modification is in progress for the callId.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>PossibleResolution</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>Complete the In-Progress Media modification before initiating another request.</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>APIError</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501: Call <callid> in progress</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>ResourceMethod</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">Number</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>PUT /RTC/v1/sessions/{sessionid}/calls/{callid}</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>HttpStatusCode</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>409</p></td>
+        </tr>
+
+	
+
+        <tr>
+            
+                <td class="name"><code>MessageId</code></td>
+            
+
+            <td class="type">
+            
+                
+<span class="param-type">String</span>
+
+
+            
+            </td>
+
+            
+
+            
+
+            <td class="description last"><p>SVC8501</p></td>
+        </tr>
+
+	
+	</tbody>
+</table>
+</dl>
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+	
+
+
+
+	
+
+	
+
+	
+
+	
+</dl>
+
+
+    
+</dd>
+
+        </dl>
+    
+
+    
+
+    
+
+    
+</article>
+
+</section>
+
+
+
+
+				</div>
+
+				<div class="clearfix"></div>
+				<footer>
+					
+					
+		<span class="copyright">
+		AT&T
+		</span>
+					<br />
+					
+		<span class="jsdoc-message">
+		Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.2.2</a>
+		on 2014-12-31T17:22:19-08:00 using the <a
+			href="https://github.com/terryweiss/docstrap">DocStrap template</a>.
+		</span>
+				</footer>
+			</div>
+
+			
+			<div class="span3">
+				<div id="toc"></div>
+			</div>
+			
+			<br clear="both">
+		</div>
+
+	</div>
+	<!--<script src="scripts/sunlight.js"></script>-->
+	<script src="scripts/docstrap.lib.js"></script>
+	<script src="scripts/bootstrap-dropdown.js"></script>
+	<script src="scripts/toc.js"></script>
+
+	<script>
+		$( function () {
+			$( "[id*='$']" ).each( function () {
+				var $this = $( this );
+
+				$this.attr( "id", $this.attr( "id" ).replace( "$", "__" ) );
+			} );
+
+			$( "#toc" ).toc( {
+				anchorName  : function ( i, heading, prefix ) {
+					return $( heading ).attr( "id" ) || ( prefix + i );
+				},
+				selectors   : "h1,h2,h3,h4",
+				showAndHide : false,
+				scrollTo    : "100px"
+			} );
+
+			$( "#toc>ul" ).addClass( "nav nav-pills nav-stacked" );
+			$( "#main span[id^='toc']" ).addClass( "toc-shim" );
+			$( '.dropdown-toggle' ).dropdown();
+//			$( ".tutorial-section pre, .readme-section pre" ).addClass( "sunlight-highlight-javascript" ).addClass( "linenums" );
+
+			$( ".tutorial-section pre, .readme-section pre" ).each( function () {
+				var $this = $( this );
+
+				var example = $this.find( "code" );
+				exampleText = example.html();
+				var lang = /{@lang (.*?)}/.exec( exampleText );
+				if ( lang && lang[1] ) {
+					exampleText = exampleText.replace( lang[0], "" );
+					example.html( exampleText );
+					lang = lang[1];
+				} else {
+					lang = "javascript";
+				}
+
+				if ( lang ) {
+
+					$this
+						.addClass( "sunlight-highlight-" + lang )
+						.addClass( "linenums" )
+						.html( example.html() );
+
+				}
+			} );
+
+			Sunlight.highlightAll( {
+				lineNumbers : true,
+				showMenu : true,
+				enableDoclinks : true
+			} );
+		} );
+	 </script>
+
+
+
+	<!--Navigation and Symbol Display-->
+	
+	<script>
+		$( function () {
+			$( '#main' ).localScroll( {
+				offset : { top : 60 } //offset by the height of your header (give or take a few px, see what works for you)
+			} );
+			$( "dt.name" ).each( function () {
+				var $this = $( this ).find("h4");
+				var icon = $( "<i/>" ).addClass( "icon-plus-sign" ).addClass( "pull-right" ).addClass( "icon-white" );
+				var dt = $(this);
+				var children = dt.next( "dd" );
+
+				dt.prepend( icon ).css( {cursor : "pointer"} );
+				dt.addClass( "member-collapsed" ).addClass( "member" );
+
+
+				children.hide();
+
+				dt.children().on( "click", function () {
+					children = dt.next( "dd" );
+					console.debug(dt, children)
+					children.slideToggle( "fast", function () {
+
+						if ( children.is( ":visible" ) ) {
+							icon.addClass( "icon-minus-sign" ).removeClass( "icon-plus-sign" ).removeClass( "icon-white" );
+							dt.addClass( "member-open" ).animate( "member-collapsed" );
+						} else {
+							icon.addClass( "icon-plus-sign" ).removeClass( "icon-minus-sign" ).addClass( "icon-white" );
+							dt.addClass( "member-collapsed" ).removeClass( "member-open" );
+						}
+					} );
+				} );
+
+			} );
+		} );
+	</script>
+	
+
+
+	<!--Google Analytics-->
+	
+
+</body>
+</html>

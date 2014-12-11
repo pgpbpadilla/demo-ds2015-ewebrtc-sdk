@@ -1,0 +1,228 @@
+body {
+  background: #e3e3e3;
+}
+
+#logconsole {
+  clear: both;
+  padding: 10px !important;
+}
+
+#callee {
+  height: 30px;
+  min-width: 100px;
+}
+
+.alert {
+  position: relative;
+  font-weight: bold;
+  font-size: 13px;
+}
+
+.alert:empty {
+  padding: 0;
+  border: 0;
+  margin: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.jumbotron p {
+  font-size: 12px;
+  word-wrap: break-word;
+}
+
+.jumbotron-video {
+  padding: 10px;
+}
+
+.video-box {
+  padding: 0;
+}
+
+#show-console {
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1002;
+}
+
+.hidden {
+  display: none;
+}
+
+.shown {
+  display: block;
+}
+
+.call-actions {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  opacity: 0;
+}
+
+.call-actions button {
+  margin-left: 5px;
+}
+
+.navbar-nav {
+  margin: 0;
+}
+
+.video-wrap {
+  clear: both;
+  background: black;
+  position: relative;
+  padding: 0;
+}
+
+#localVideo {
+  position: absolute;
+  bottom: 1px;
+  right: 1px;
+  border: 1px solid #006687;
+  background: black;
+}
+
+#btn-msg-close {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#btn-end-conference {
+    margin-left: 10px
+}
+
+#address-box {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+}
+
+#panel-participants {
+    background-color: #d3d3d3;
+    padding: 10px;
+    position: absolute;
+    left: -275px;
+    top: 40px;
+    z-index: 10;
+    min-width: 260px;
+}
+
+#panel-participants .panel-header {
+    font-size: 12px;
+    border-bottom: thin black solid;
+}
+
+#panel-participants .panel-title {
+    padding-bottom: 5px;
+}
+
+#panel-participants .panel-close {
+    position: absolute;
+    right: 5px;
+    padding: 10px 0 5px 0;
+    cursor: pointer;
+}
+
+#panel-participants .panel-body {
+    width: 100%;
+    font-size: 10px;
+}
+
+#panel-participants .participant {
+    width: 100%;
+    border-bottom: thin grey dotted;
+    padding: 10px;
+}
+
+.remove-participant {
+    cursor: pointer;
+}
+
+#alerts-in-calls {
+    width: 330px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    height: 40px;
+    display: none;
+    font-size: 12px;
+}
+
+#message {
+    max-height: 160px;
+    border-radius: 16px;
+}
+
+.msg.warning {
+    color: yellow;
+}
+
+#message button {
+  padding: 6px 15px;
+  border-radius: 20px;
+  border-style: hidden;
+}
+
+#message hr {
+  margin-top: 5px;
+}
+
+#message:empty {
+    height: 0;
+}
+
+#message h4 {
+    float: left;
+}
+
+#message hr {
+    clear: both;
+    margin-bottom: 5px;
+}
+
+button.btn {
+  border-radius: 8px;
+  border-style: outset;
+}
+
+#message h6 {
+  display: inline-block;
+  padding-right: 10px;
+}
+
+.input-group.audio-only {
+  margin-left: 15px;
+  margin-top: 5px;
+}
+
+@media (max-width: 768px) {
+    .nav > li {
+        display: inline-block;
+    }
+    #callee, #participant {
+        width: 260px;
+        margin-right: 10px;
+    }
+    #btn-participants-list {
+        margin-left: 20px
+    }
+}
+
+.old-msgs {
+  pointer-events: none;
+  font-style: italic;
+  opacity: 0.5;
+}
+
+.flip-horizontal {
+  -moz-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+}

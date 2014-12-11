@@ -1,0 +1,34 @@
+<div class="col-sm-6 col-sm-offset-3 jumbotron">
+
+  <h2>Address</h2>
+
+  <!-- SET ADDRESS FORM -->
+  <form id="addressForm" action="" method="post" onsubmit="setAddress(event)">
+    <div class="form-group">
+      <label>First Name</label>
+      <input type="text" required class="form-control" name="first_name" placeholder="First Name" value="Enhanced WebRTC">
+      <label>Last Name</label>
+      <input type="text" required class="form-control" name="last_name" placeholder="Last Name" value="Tester">
+      <label>House Number</label>
+      <input type="text" required class="form-control" name="house_number" placeholder="House Number" value="16221">
+      <label>Street</label>
+      <input type="text" required class="form-control" name="street" placeholder="Street" value="NE 72nd Way">
+      <label>Unit/Apt/Suite</label>
+      <input type="text" class="form-control" name="unit" placeholder="Unit/Apt/Suite" value="">
+      <label>City</label>
+      <input type="text" required class="form-control" name="city" placeholder="City" value="Redmond">
+      <label>State</label>
+      <input type="text" required class="form-control" name="state" placeholder="State" value="WA">
+      <label>Zip Code</label>
+      <input type="text" required class="form-control" name="zip" placeholder="Zip Code<" value="98052">
+    </div>
+    <div class="form-group">
+      <label><input type="checkbox" name="is_confirmed"></label>
+      <label>Address Confirmed</label>
+    </div>
+    <button type="submit" class="btn btn-primary btn-lg" id="address">
+      Add Address
+    </button>
+  </form>
+
+</div>

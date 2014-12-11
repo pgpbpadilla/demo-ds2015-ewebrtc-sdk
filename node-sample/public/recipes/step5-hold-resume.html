@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+<meta charset="UTF-8">
+</head>
+<body>
+<header>Step 5. Hold and Resume Call
+&nbsp;&nbsp; <a href="step4-reject-end.html">Previous Step</a>
+&nbsp;&nbsp; <a href="step6-mute-unmute.html">Next Step</a>
+&nbsp;&nbsp; <a href="index.html">Home</a>
+</header>
+
+<!-- HTML will go here -->
+    
+<!-- Step 1a: HTML Phone Objects UI -->
+<p>
+<button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+<button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+    
+<!-- Step 2a: HTML Login and Logout UI -->
+<p>
+<input type="text" id="loginInput" placeholder="Example: alice or bob" size="30" hidden></input>
+<button id="loginButton" onclick="login()" hidden>Account ID Login</button>
+<button id="logoutButton" onclick="logout()" hidden>Logout</button>
+</p>
+
+<!-- Step 3a: HTML Make and Answer Call UI -->
+<p>
+<input type="text" id="callToInput" placeholder="Account ID/Telephone" hidden></input>
+<button id="makeCallButton" onclick="makeCall()" hidden>Make Call alice@yourdomain.com or 1234567890</button>
+<button id="answerCallButton" onclick="answerCall()" hidden>Answer Call</button>
+<audio id="local" style="display:none"></audio>
+<audio id="remote" style="display:none"></audio>
+
+<!-- Step 4a: HTML Reject and End Call UI -->
+<button id="rejectCallButton" onclick="rejectCall()" hidden>Reject Call</button>
+<button id="hangupCallButton" onclick="hangUpCall()" hidden>Hangup Call</button>
+
+<!-- Step 5a: Hold and Resume Call UI -->
+<button id="holdCallButton" onclick="holdCall()" hidden>Hold Call</button>
+<button id="resumeCallButton" onclick="resumeCall()" hidden>Resume Call</button>
+</p>
+
+<!-- JavaScript will go here -->  
+
+<!-- Step 1b: Configure Phone Objects and Register Events-->
+<script type="text/javascript" src="/js/ewebrtc-sdk.min.js"></script>   
+<script type="text/javascript">
+      
+function onError(data) {
+    console.log(data.error);
+}
+    
+function configurePhone() {
+    var phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+    configureButton.hidden = true;
+    configureSuccessButton.hidden = false;
+    loginInput.hidden = false; // Added in Step 2
+    loginButton.hidden = false; // Added in Step 2
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+    phone.on('session:ready', onSessionReady); // Added in Step 2
+    phone.on('session:disconnected', onSessionDisconnected); // Added in Step 2
+    phone.on('call:incoming', onIncomingCall); // Added in Step 3
+    phone.on('call:connected', onConnectedCall); // Added in Step 3
+    phone.on('call:disconnected', onDisconnectedCall); // Added in Step 4
+    phone.on('call:rejected', onRejectedCall); // Added in Step 4
+    phone.on('call:held', onHeldCall); // Added in Step 5
+    phone.on('call:resumed', onResumedCall); // Added in Step 5
+}
+    
+// Step 2b: Login and Logout
+function onSessionReady() {
+    loginButton.hidden = true;
+    logoutButton.hidden = false;
+    callToInput.hidden = false; // Added in Step 3
+    makeCallButton.hidden = false; // Added in Step 3
+}
+    
+function onSessionDisconnected() {
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+    callToInput.hidden = true; // Added in Step 3
+    makeCallButton.hidden = true; // Added in Step 3
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({token: tokenHolder.access_token});
+        },
+        error: onError
+    });
+}
+    
+function logout() {
+    phone.logout();
+}
+
+// Step 3b: Make and Answer Call
+function onIncomingCall () {
+    makeCallButton.hidden = true;
+    answerCallButton.hidden = false;
+    rejectCallButton.hidden = false; // Added in Step 4
+}
+    
+function onConnectedCall () {
+    callToInput.value = "" ;
+    makeCallButton.hidden = true; 
+    answerCallButton.hidden = true;
+    hangupCallButton.hidden = false; // Added in Step 4
+    rejectCallButton.hidden = true; // Added in Step 4
+    holdCallButton.hidden = false; // Added in Step 5 
+}
+    
+function makeCall() {
+    phone.dial({
+    destination: phone.cleanPhoneNumber(callToInput.value),
+    mediaType: 'audio',
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}
+
+function answerCall() {
+    phone.answer({
+    mediaType: 'audio',
+    localMedia: document.getElementById('local'),
+    remoteMedia: document.getElementById('remote')
+    });
+}    
+
+// Step 4b: Reject and End Call
+function onDisconnectedCall () {
+    makeCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+    answerCallButton.hidden = true; 
+    hangupCallButton.hidden = true;
+    holdCallButton.hidden = true; // Added in Step 5
+    resumeCallButton.hidden = true; // Added in Step 5
+}        
+
+function onRejectedCall () {
+    makeCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+    answerCallButton.hidden = true; 
+}        
+            
+function hangUpCall() {
+    phone.hangup ();
+}
+    
+function rejectCall() {
+    phone.reject ();
+}
+
+// Step 5b: Hold and Resume Call
+function onHeldCall () {
+    hangupCallButton.hidden = true;
+    resumeCallButton.hidden = false;
+    holdCallButton.hidden = true;
+}
+
+function onResumedCall () {
+    hangupCallButton.hidden = false;
+    resumeCallButton.hidden = true;
+    holdCallButton.hidden = false;
+    }        
+
+function holdCall() {
+    phone.hold();
+}
+    
+function resumeCall() {
+    phone.resume();
+}     
+       
+</script>
+
+<!-- JavaScript Code Snippets -->
+<p><span><div style="background-color:#EEEEEE; font:12px; padding-left:5px; width:500px">         
+<pre>
+
+//Step 5. Hold and Resume Call
+
+function registerEvents() {
+    phone.on('call:held', onHeldCall);
+    phone.on('call:resumed', onResumedCall);
+}
+
+function onHeldCall () {
+    // Do something
+}        
+
+function onResumedCall () {
+    // Do something
+}        
+
+function holdCall() {
+    phone.hold();
+}
+    
+function resumeCall() {
+    phone.resume();
+}     
+    
+</pre>       
+</div></span></p>
+
+</body>
+</html>
