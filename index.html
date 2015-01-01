@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>JavaScript SDK for AT&amp;T Enhanced WebRTC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+	<!--link rel="stylesheet/less" href="less/bootstrap.less" type="text/css" /-->
+	<!--link rel="stylesheet/less" href="less/responsive.less" type="text/css" /-->
+	<!--script src="js/less-1.3.3.min.js"></script-->
+	<!--append ‘#!watch’ to the browser URL, then refresh the page. -->
+	<link rel="AT&T icon" type="image/x-icon" href="atticon.ico" />
+	<link href="css/bootstrap.min.css" rel="stylesheet">
+	<link href="css/style.css" rel="stylesheet">
+
+  <!-- HTML5 shim, for IE6-8 support of HTML5 elements -->
+  <!--[if lt IE 9]>
+    <script src="js/html5shiv.js"></script>
+  <![endif]-->
+
+  <!-- Fav and touch icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="img/apple-touch-icon-144-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="114x114" href="img/apple-touch-icon-114-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" sizes="72x72" href="img/apple-touch-icon-72-precomposed.png">
+  <link rel="apple-touch-icon-precomposed" href="img/apple-touch-icon-57-precomposed.png">
+  <link rel="shortcut icon" href="img/favicon.png">
+  
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/scripts.js"></script>
+
+	<link href="js/google-code-prettify/prettify.css" type="text/css" rel="stylesheet" />
+	<script src="js/google-code-prettify/prettify.js"></script>
+
+</head>
+
+<body onload="prettyPrint()">
+<div class="container">
+	<div class="row clearfix">
+		<div class="col-md-12 column">
+			<div class="page-header">
+				<h1>
+					<div>
+						JavaScript SDK for AT&amp;T Enhanced WebRTC
+					</div>
+				</h1>
+			</div>
+			
+			<p>
+				AT&amp;T Enhanced WebRTC (Web Real Time Communication) allows you to build real time browser based communication applications. WebRTC Restful APIs allows you to discover other party in communication and use standard offer/answer model to exchange session parameter to establish effective audio/video communications.
+			</p>
+			
+			<p>
+				AT&amp;T Enhanced WebRTC allows you to use AT&amp;T Mobile Number or existing member Account IDs or use AT&amp;T's Virtual Number for communication.
+			</p>
+			
+			<div class="row clearfix">
+				<div class="col-md-6 column">
+					 <a class="btn btn-lg btn-info" href="api-docs/" target="_blank">API Documentation</a>
+				</div>
+				<div class="col-md-6 column">
+					 <a class="btn btn-lg btn-info" href="tutorial/" target="_blank">Tutorial</a>
+				</div>
+			</div>
+			<h2>
+				Getting the Phone object
+			</h2>
+			
+
+			<div role="tabpanel" id="1-get-phone">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active"><a href="#1-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation"><a href="#1-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="1-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<p>
+  <button id="configureButton" onclick="configurePhone()">Create Phone Objects</button>
+  <button id="configureSuccessButton" hidden disabled>Phone Objects Created Successfully</button>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="1-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+var phone;
+
+function onError(data) {
+    console.log(data.error);
+}
+ 
+function configurePhone() {
+    phone = ATT.rtc.configure(getPhone);
+}      
+    
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>
+				Login and Logout (Account ID Users)
+			</h2>
+
+			<div role="tabpanel" id="2-log-in_out-notn">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#2-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#2-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="2-html">
+	 					<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<p>
+  <input type="text" id="loginInput" placeholder="Example: alice or bob" size="30" hidden></input>
+  <button id="loginButton" onclick="login()" hidden>Account ID Login</button>
+  <button id="logoutButton" onclick="logout()" hidden>Logout</button>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="2-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function getPhone() {
+    // All initilaizations go here
+    loginInput.hidden = false;
+    loginButton.hidden = false;
+}
+
+function registerEvents() {
+    // All registrations go here
+    phone.on('session:ready', onSessionReady);
+    phone.on('session:disconnected', onSessionDisconnected);
+}
+
+function onSessionReady() {
+    loginButton.hidden = true;
+    logoutButton.hidden = false;
+}
+    
+function onSessionDisconnected() {
+    loginButton.hidden = false;
+    logoutButton.hidden = true;
+}
+       
+function login() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: 'ACCOUNT_ID',
+        success: associateAccessToken,
+        error: onError
+    });
+}
+
+function associateAccessToken(tokenHolder) {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: tokenHolder.access_token,
+        success: function () {
+            phone.login({
+              token: tokenHolder.access_token
+            });
+        },
+        error: onError
+    }); 
+}
+    
+function logout() {
+    phone.logout();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Make and Answer Call</h2>
+			<div role="tabpanel" id="3-make-answer">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#3-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#3-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="3-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<p>
+  <input type="text" id="callToInput" placeholder="Account ID/Telephone" hidden></input>
+  <button id="makeCallButton" onclick="makeCall()" hidden>Make Call alice@yourdomain.com or 1234567890</button>
+  <button id="answerCallButton" onclick="answerCall()" hidden>Answer Call</button>
+  <audio id="local" style="display:none"></audio>
+  <audio id="remote" style="display:none"></audio>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="3-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function getPhone() {
+    // All initilaizations go here
+    loginInput.hidden = false;
+    loginButton.hidden = false;
+}
+
+function registerEvents() {
+    // All registrations go here
+    phone.on('call:incoming', onIncomingCall);
+    phone.on('call:connected', onConnectedCall);
+}
+
+function onSessionReady() {
+    // All sesssion initialization go here
+    callToInput.hidden = false;
+    makeCallButton.hidden = false;
+}
+
+function onSessionDisconnected() {
+    // All sesssion exit go here
+    callToInput.hidden = true;
+    makeCallButton.hidden = true;
+}
+    
+function onIncomingCall () {
+    makeCallButton.hidden = true;
+    answerCallButton.hidden = false;
+}
+    
+function onConnectedCall () {
+    callToInput.value = "" ;
+    makeCallButton.hidden = true; 
+    answerCallButton.hidden = true;
+}
+    
+function makeCall() {
+    phone.dial({
+       destination: phone.cleanPhoneNumber(callToInput.value),
+       mediaType: 'audio',
+       localMedia: document.getElementById('local'),
+       remoteMedia: document.getElementById('remote')
+    });
+}
+
+function answerCall() {
+    phone.answer({
+       mediaType: 'audio',
+       localMedia: document.getElementById('local'),
+       remoteMedia: document.getElementById('remote')
+    });
+}  
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Reject and Hangup Call</h2>
+			<div role="tabpanel" id="4-reject-end">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#4-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#4-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="4-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">
+<!-- Your code goes here -->
+<button id="rejectCallButton" onclick="rejectCall()" hidden>Reject Call</button>
+<button id="hangupCallButton" onclick="hangUpCall()" hidden>Hangup Call</button>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="4-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents () {
+    // All registrations go here
+    phone.on('call:disconnected', onDisconnectedCall);
+    phone.on('call:rejected', onRejectedCall);
+}
+
+function onIncomingCall () {
+    // Your code goes here
+    rejectCallButton.hidden = false;
+}
+
+function onConnectedCall () {
+    // Your code goes here
+    hangupCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+}
+
+function onDisconnectedCall () {
+    makeCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+    answerCallButton.hidden = true; 
+    hangupCallButton.hidden = true;
+}        
+
+function onRejectedCall () {
+    makeCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+    answerCallButton.hidden = true; 
+}        
+            
+function hangUpCall() {
+    phone.hangup ();
+}
+    
+function rejectCall() {
+    phone.reject ();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Hold and Resume Call</h2>
+			<div role="tabpanel" id="5-hold-resume">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#5-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#5-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="5-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<button id="holdCallButton" onclick="holdCall()" hidden>Hold Call</button>
+<button id="resumeCallButton" onclick="resumeCall()" hidden>Resume Call</button>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="5-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('call:resumed', onResumedCall);
+}
+
+function onConnectedCall () {
+    // Your code goes here
+    holdCallButton.hidden = false;
+}
+
+function onDisconnectedCall () {
+    // Your code goes here
+    holdCallButton.hidden = true;
+    resumeCallButton.hidden = true;
+}
+
+function onHeldCall () {
+    hangupCallButton.hidden = true;
+    resumeCallButton.hidden = false;
+    holdCallButton.hidden = true;
+}
+
+function onResumedCall () {
+    hangupCallButton.hidden = false;
+    resumeCallButton.hidden = true;
+    holdCallButton.hidden = false;
+}        
+
+function holdCall() {
+    phone.hold();
+}
+    
+function resumeCall() {
+    phone.resume();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+
+
+			<h2>Mute and Unmute Call</h2>
+			<div role="tabpanel" id="6-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#6-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#6-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="6-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<button id="muteCallButton" onclick="muteCall()" hidden>Mute Call</button>
+<button id="unmuteCallButton" onclick="unmuteCall()" hidden>Unmute Call</button>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="6-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('call:muted', onMutedCall);
+    phone.on('call:unmuted', onUnmutedCall);
+}
+
+function onConnectedCall () {
+    // Your code goes here
+    muteCallButton.hidden = false;
+}
+
+function onDisconnectedCall () {
+    // Your code goes here
+    muteCallButton.hidden = true;
+    unmuteCallButton.hidden = true;
+}
+
+function onHeldCall () {
+    // Your code goes here
+    muteCallButton.hidden = true;
+    unmuteCallButton.hidden = true;
+}
+
+function onResumedCall () {
+    // Your code goes here
+    muteCallButton.hidden = false;
+}
+
+function onMutedCall () {
+    muteCallButton.hidden = true;
+    unmuteCallButton.hidden = false;
+}        
+
+function onUnmutedCall () {
+    muteCallButton.hidden = false;
+    unmuteCallButton.hidden = true;
+}        
+
+function muteCall() {
+    phone.mute();
+}
+    
+function unmuteCall() {
+    phone.unmute();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Move and Cancel Call</h2>
+			<div role="tabpanel" id="7-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#7-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#7-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="7-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">
+<!-- Your code goes here -->
+<button id="moveCallButton" onclick="moveCall()" hidden>Move Call</button>
+<button id="cancelCallButton" onclick="cancelCall()" hidden>Cancel Call</button>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="7-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('call:connecting', onConnectingCall);
+    phone.on('call:canceled', onCanceledCall);
+}
+
+function onConnectedCall () {
+    // Your code goes here
+    cancelCallButton.hidden = true;
+    moveCallButton.hidden = false;
+}
+
+function onDisconnectedCall () {
+    // Your code goes here
+    moveCallButton.hidden = true; 
+    cancelCallButton.hidden = true;
+}
+
+function onHeldCall () {
+    // Your code goes here
+    moveCallButton.hidden = true;
+}
+
+function onConnectingCall () {
+    makeCallButton.hidden = true;
+    cancelCallButton.hidden = false;
+}
+
+function onCanceledCall () {
+    makeCallButton.hidden = false;
+    rejectCallButton.hidden = true;
+    answerCallButton.hidden = true;
+    cancelCallButton.hidden = true;
+}        
+
+function moveCall() {
+    phone.move();
+}
+    
+function cancelCall() {
+    phone.cancel();
+} 						
+					</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Add 2nd Call and Switch Call</h2>
+			<div role="tabpanel" id="8-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#8-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#8-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="8-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<p>
+  <button id="addCallButton" onclick="addCall()" hidden>
+  Add 2nd Call bob@yourdomain.com or 1234567890 (This is not Conference Call)
+  </button>
+  <button id="switchCallButton" onclick="switchCall()" hidden>Switch Call</button>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="8-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('call:connected', onConnectedCall);
+    phone.on('session:call-switched', onCallSwitched);
+}
+    
+function onConnectedCall () {
+    // Your code goes here
+    addCallButton.hidden = false;
+}
+
+function onCallSwitched () {
+    addCallButton.hidden = true;
+    switchCallButton.hidden = false;
+}	        
+
+function addCall() {
+    phone.addCall({
+        destination: phone.cleanPhoneNumber(callToInput.value),
+        mediaType: 'audio',
+        localMedia: document.getElementById('local'),
+        remoteMedia: document.getElementById('remote')
+    });
+}
+
+function switchCall () {
+    phone.switchCall();
+} 
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+			<h2>Video Call</h2>
+			<div role="tabpanel" id="9-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#9-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#9-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="9-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<video id="local" style="width:320px;">
+<video id="remote" style="width:320px;">
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="9-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+
+// code to register for call events goes here ...
+
+function makeCall() {
+    phone.dial({
+        destination: phone.cleanPhoneNumber(callToInput.value),
+        mediaType: 'video',
+        localMedia: document.getElementById('local'),
+        remoteMedia: document.getElementById('remote')
+    });
+}
+
+function answerCall() {
+    phone.answer({
+        mediaType: 'video',
+        localMedia: document.getElementById('local'),
+        remoteMedia: document.getElementById('remote')
+    });
+}  
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Login Advanced</h2>
+			<div role="tabpanel" id="10-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#10-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#10-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="10-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<p>
+  <select id="tokenScopeSelect" onchange="onTokenScopeSelect()">
+    <option>Select a Account Login Type to start</option>
+    <option value="ACCOUNT_ID">Account ID Login</option>
+    <option value="MOBILE_NUMBER">Mobile Number Login</option>
+    <option value="VIRTUAL_NUMBER">Virtual Number Login</option>
+  </select>    
+</p>    
+<p>
+  <button id="startLoginButton" onClick="onStartLoginClick()" disabled>Enter Account ID/Virtual Number and Click here to start</button>
+  <input type="text" id="loginInput" value="" disabled size="55"></input>
+</p>
+<p>
+  <button id="authCodeButton" onClick="onAuthCodeClick()" disabled >Get AT&T Mobile Subscriber Consent</button>
+  <input id="authCodeResult" disabled size="55"></input>  
+</p>
+<p>
+  <button id="e911AddressButton" onClick="one911AddressClick()" disabled >Collect/Retrieve E911 Adress</button>
+  <input id="e911AdressResult" disabled size="110"></input>  
+</p>
+<p>
+  <button id="e911AccessTokenButton" onClick="one911AccessTokenClick()" disabled >Create E911 Access Token</button>
+  <input id="e911AccessTokenResult" disabled size="40"></input>  
+</p>
+<p>
+  <button id="e911IdButton" onClick="onE911IdClick()" disabled >Get E911 Address Identifier</button>
+  <input id="e911IDInput" disabled size="70"></input>
+</p>
+<p>
+  <button id="createUserAccessTokenButton" onClick="createUserAccessTokenClick()" disabled >Create User Access Token</button>
+  <input id="userTokenResult" disabled size="40"></input>
+</p>
+<p>
+  <button id="associateUserAccessTokenButton" onClick="associateUserAccessTokenClick()" disabled>Associate User Access Token</button>
+  <input id="associatedUserTokenResult" disabled size="40"></input>
+</p>
+<p>
+  <button id="loginButton" onClick="onLoginClick()" disabled>Login</button>
+  <input id="loginSessionResult" disabled size="60"></input>    
+  <button id="logoutButton" onClick="logout()" hidden>Logout</button>
+  <input id="errorMessage" value="There is an error. Check console log for details" hidden disabled size="60"></input>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="10-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+var phone = ATT.rtc.configure(getPhone), tokenScope;
+  
+function getPhone() {
+    phone = ATT.rtc.Phone.getPhone();
+    registerEvents (); 
+}
+
+function registerEvents() {
+    phone.on('error', onError); 
+    phone.on('session:ready', onSessionReady);
+    phone.on('session:disconnected', onSessionDisconnected);
+}
+    
+function onError(data) {
+    console.log(data.error);
+    loginButton.disabled = true;
+    errorMessage.hidden = false;
+}
+
+function onSessionReady(data) {
+    loginButton.disabled = true;
+    logoutButton.hidden = false;
+    loginSessionResult.value = "Session ID ".concat(data.sessionId);
+}
+
+function onSessionDisconnected() {
+    logoutButton.hidden = true;
+    window.location ="step10-login-advanced.html"; 
+}
+    
+function onTokenScopeSelect (data) {
+    authCodeButton.disabled = true; // Disabled button on selection change
+    e911AddressButton.disabled = true; // Disabled button on selection change
+    createUserAccessTokenButton.disabled = true; // Disabled button on selection change
+    e911IdButton.disabled = true; // Disabled button on selection change
+    createUserAccessTokenButton.disabled = true; // Disabled button on selection change
+    associateUserAccessTokenButton.disabled = true; // Disabled button on selection change
+    loginButton.disabled = true; // Disabled button on selection change
+    associatedUserTokenResult.value = "Required";
+    userTokenResult.value = "Required";   
+    loginSessionResult.value = "Required";
+    startLoginButton.disabled = false;
+    loginInput.disabled = false;
+    authCodeResult.value = "Not Required";
+    if (tokenScopeSelect.value == "ACCOUNT_ID") {
+        loginInput.placeholder = "Enter Account ID (Ex: alice or bob)";
+        e911AdressResult.value = "Not Required";
+        e911AccessTokenResult.value = "Not Required";
+        e911IDInput.value = "Not Required";
+    } else if (tokenScopeSelect.value == "VIRTUAL_NUMBER") { 
+        loginInput.placeholder = "Enter Your Assigned Virtual Number (Ex: vtn:1234567890)";
+        e911AdressResult.value = "Required";
+        e911AccessTokenResult.value = "Required";
+        e911IDInput.value = "Required";
+    } else {
+        startLoginButton.disabled = true;
+        loginInput.disabled = true;
+        loginInput.value = "Not Required";
+        authCodeButton.disabled = false;
+        authCodeResult.value = "Get AT&T Subscriber User Consent Authorization Code";
+        e911AdressResult.value = "Required";
+        e911AccessTokenResult.value = "Required";
+        e911IDInput.value = "Required"
+        associatedUserTokenResult.value = "Not Required";
+    }
+}
+
+function onAuthCodeClick() {
+    window.location.href = '/oauth/authorize?redirect_uri=https://localhost:9001/recipes/step10-login-advanced.html';
+}
+    
+function onStartLoginClick(){
+    startLoginButton.disabled = true;
+    loginInput.disabled = true;
+    if (tokenScopeSelect.value == "ACCOUNT_ID") {
+        createUserAccessTokenButton.disabled = false;
+        userTokenResult.value = "Next create a user token";
+    } else {
+        e911AddressButton.disabled = false;
+        e911AdressResult.value = "Next collect/retrieve a valid physical address";
+    }    
+}
+      
+function one911AddressClick() {
+    e911AddressButton.disabled = true;
+    e911AdressResult.value = "For demo, we assumed a valid physical address has been entered by user or retrieved from your database";
+    e911AccessTokenButton.disabled = false;
+    e911AccessTokenResult.value = "Next use E911 Scope to create acess token";
+}
+
+function one911AccessTokenClick() {
+    e911AccessTokenResult.value = "Creating E911 access token .....";
+    tokenScope = "E911";
+    creatAccessToken();
+}
+
+function onE911IdClick() {
+    e911IDInput.value = "Getting E911 Address ID .....";  
+    createE911Id () ;
+}
+    
+function createUserAccessTokenClick() {
+    userTokenResult.value = "Creating user access token .....";
+    tokenScope = tokenScopeSelect.value;
+    creatAccessToken();
+}
+
+function associateUserAccessTokenClick() {
+    associatedUserTokenResult.vale = "Associating user access token .....";
+    associateAccessToken();
+}
+    
+function onLoginClick() {
+    login();
+}
+    
+function creatAccessToken() {
+    ATT.rtc.dhs.createAccessToken({
+        app_scope: tokenScope,
+        auth_code: authCodeResult.value, 
+        success:    function (accessToken) {
+                        if (tokenScope == "E911") {
+                            e911AccessTokenButton.disabled = true;
+                            e911AccessTokenResult.value = accessToken.access_token;
+                            e911IdButton.disabled = false;
+                            e911IDInput.value = "Next use the E911 Address & E911 access token to get the E911 ID";
+                        } else {
+                            userTokenResult.value = accessToken.access_token;
+                            createUserAccessTokenButton.disabled = true;
+                            if (tokenScope != "MOBILE_NUMBER") {
+                                associateUserAccessTokenButton.disabled = false;
+                                associatedUserTokenResult.value = "Next associated user access token to user";
+                            } else {
+                                loginButton.disabled = false;
+                                loginSessionResult.value = "Next click login to get sesssion ID";
+                            }
+                        }
+                    },
+        error: onError
+    });
+}
+
+function createE911Id () {
+    ATT.rtc.dhs.createE911Id({
+        token: e911AccessTokenResult.value,
+        address: {
+                    first_name: 'John',
+                    last_name: 'Doe',
+                    house_number: '16221',
+                    street: 'NE 72nd Way',
+                    unit: '',
+                    city: 'Redmond',
+                    state: 'WA',
+                    zip: '98052',
+                    is_confirmed: 'true'
+        },
+        success:    function (e911Data) {
+                       e911IDInput.value = e911Data.e911Locations.addressIdentifier;
+                       e911IdButton.disabled = true;
+                       createUserAccessTokenButton.disabled = false;
+                       userTokenResult.value = "Next create a user access token";
+                    },
+        error: onError
+    });
+}
+
+function associateAccessToken() {
+    ATT.rtc.associateAccessToken({
+        userId: loginInput.value,
+        token: userTokenResult.value,
+        success:    function () {
+                       associatedUserTokenResult.value = "Successfully associated token with user id";
+                       associateUserAccessTokenButton.disabled = true;
+                       loginButton.disabled = false;
+                       loginSessionResult.value = "Next click login to get sesssion ID";
+        },
+        error: onError
+    }) 
+}
+
+function login() {
+    if (tokenScope == "ACCOUNT_ID") {
+        phone.login({
+           token: userTokenResult.value
+        }); 
+    } else {
+        phone.login({
+           token: userTokenResult.value,
+           e911Id: e911IDInput.value        
+        }); 
+    }
+}
+
+function logout() {
+    phone.logout();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>			
+
+			<h2>Start Conference</h2>
+			<div role="tabpanel" id="11-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#11-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#11-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="11-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<button id="startConferenceButton" onclick="onStartConference()" hidden>Start Conference</button>
+<button id="endConferenceButton" onclick="endConference()" hidden>End Conference</button>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="11-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('conference:connected', onConferenceConnected);
+    phone.on('conference:ended', onConferenceEnded);
+}
+
+function onSessionReady() {
+    // Your code goes here
+    startConferenceButton.hidden = false;
+}
+
+function onSessionDisconnected() {
+    // Your code goes here
+    startConferenceButton.hidden = true;
+    endConferenceButton.hidden = true;
+}
+
+function onConferenceConnected () {
+    startConferenceButton.hidden = true;
+    endConferenceButton.hidden = false;
+}
+    
+function onConferenceEnded () {
+    startConferenceButton.hidden = false;
+    endConferenceButton.hidden = true;
+}
+    
+function onStartConference() {
+    startConference ();
+}
+
+function onEndConference() {
+    endConference ();
+}
+
+function startConference() {
+    phone.startConference({
+        mediaType: 'video',
+        localMedia: document.getElementById('local'),
+        remoteMedia: document.getElementById('remote')
+    });
+}
+    
+function endConference() {
+    phone.endConference();
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+
+			<h2>Add Participants</h2>
+			<div role="tabpanel" id="12-other">
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#12-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#12-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="12-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<!-- Your code goes here -->
+<p>
+  <input type="text" id="callToInput" placeholder="Account ID/Telephone" hidden></input>
+  <button id="addParticipantButton" onclick="addParticipant()" hidden>Add Participant alice@yourdomain.com or 1234567890</button>
+  <button id="invitationSentButton" hidden>Invitation Sent</button>
+  <button id="invitationAcceptedButton" hidden>Invitation Accepted</button>
+  <button id="invitationReceivedButton" onclick="onJoinConference()" hidden>Accept Conference Call</button>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="12-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+function registerEvents() {
+    // All registrations go here
+    phone.on('conference:invitation-sent', onConferenceInvitationSent);
+    phone.on('conference:invitation-received', onConferenceInvitationReceived);
+    phone.on('conference:invitation-accepted', onConferenceInvitationAccepted);
+    phone.on('conference:joining', onConferenceJoining);
+}
+
+function onSessionDisconnected() {
+    // Your code goes here
+    callToInput.hidden = true;
+}
+
+function onConferenceConnected () {
+    // Your code goes here
+    if (isConferenceHost) {
+        callToInput.hidden = false;
+        addParticipantButton.hidden = false;
+    }
+}
+
+function onConferenceEnded () {
+    // Your code goes here
+    callToInput.hidden = true;
+    addParticipantButton.hidden = true;
+    invitationSentButton.hidden = true;
+    invitationAcceptedButton.hidden = true;
+    invitationReceivedButton.hidden = true;
+}
+
+function onStartConference() {
+    // Your code goes here
+    isConferenceHost = true;
+}
+
+function endConference() {
+    // Your code goes here
+    isConferenceHost = false;
+}
+
+function onConferenceInvitationSent() {
+    if (!phone.isCallInProgress) {
+        addParticipantButton.hidden = true;
+    }
+    invitationSentButton.hidden = false;
+    invitationAcceptedButton.hidden = true;
+}
+    
+function onConferenceInvitationReceived() {
+    addParticipantButton.hidden = true;
+    startConferenceButton.hidden = true;
+    invitationReceivedButton.hidden = false;
+}
+    
+function onConferenceInvitationAccepted() {
+    callToInput.value = "";
+    callToInput.placeholder = "New Participant";
+    addParticipantButton.hidden = false;
+    invitationSentButton.hidden = true;
+    invitationAcceptedButton.hidden = false;
+}
+    
+function onConferenceJoining() {
+    invitationReceivedButton.hidden = true;
+}
+        
+function addParticipant() {
+    phone.addParticipants([callToInput.value]);
+}
+    
+function onJoinConference() {
+    phone.joinConference({
+        localMedia: document.getElementById('local'),
+        remoteMedia: document.getElementById('remote')
+    });
+    isConferenceHost = false;
+}
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+			<!-- TEMPLATE TABBABLE PANEL -->
+			<div role="tabpanel" id="X-other" hidden>
+
+			  <!-- Nav tabs -->
+			  <ul class="nav nav-tabs" role="tablist">
+			    <li role="presentation" class="active">
+			    	<a href="#X-html" aria-controls="home" role="tab" data-toggle="tab">HTML</a></li>
+			    <li role="presentation">
+			    	<a href="#X-js" aria-controls="profile" role="tab" data-toggle="tab">JavaScript</a></li>
+			  </ul>
+
+			  <!-- Tab panes -->
+			  <div class="tab-content">
+			    <div role="tabpanel" class="tab-pane active" id="X-html">
+						<xmp class="prettyprint linenums" id="htmlXmp">	
+<p>
+  <button>Button</button>
+</p>
+						</xmp> 
+			    </div>
+			    <div role="tabpanel" class="tab-pane" id="X-js">
+						<pre class="prettyprint linenums lang-js pre-scrollable">
+console.log('Some code goes here');
+						</pre>       
+			    </div>
+			  </div>
+
+			</div>
+			<!-- END OF: TEMPLATE TABBABLE PANEL -->
+			
+			<h2>
+				Other Links
+			</h2>
+			<p>
+				Additional links go here.
+			</p>
+			<p>
+				<a class="btn" href="#">View details »</a>
+			</p>
+
+		</div>
+	</div>
+
+		</div>
+	</div>
+</div>
+</body>
+</html>
